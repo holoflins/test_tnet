@@ -1,0 +1,34 @@
+version: '3.4'
+services:
+  web:
+    image: nginx:1.13-alpine
+    ports:
+      - 8080:80
+    volumes:
+      - ./www:/var/www/html
+      - ./infra/nginx/test_tnet.conf:/etc/nginx/conf.d/test_tnet.conf
+    links:
+      - php
+    container_name: test_tnet_web
+  php:
+    build:
+      dockerfile: ./infra/php/Dockerfile
+      context: .
+    volumes:
+      - ./www:/var/www/html
+    container_name: test_tnet_php
+    links:
+      - sql
+  sql:
+    image: mariadb:latest
+    volumes:
+      - ./infra/.mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: test_tnet
+      MYSQL_HOST: sql
+      MYSQL_PASSWORD: test_tnet
+      MYSQL_DATABASE: test_tnet
+    ports:
+      - 3306:3306
+    container_name: test_tnet_sql
