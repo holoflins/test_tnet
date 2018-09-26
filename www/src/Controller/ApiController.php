@@ -27,4 +27,18 @@ class ApiController extends Controller
 
         return $this->json($list, JsonResponse::HTTP_OK);
     }
+
+    /**
+     * @param string $entityName
+     * @param string $id
+     * @param RepositoryFactory $repositoryFactory
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function getOne(string $entityName, string $id, RepositoryFactory $repositoryFactory, Request $request): JsonResponse
+    {
+        $repository = $repositoryFactory->create($entityName);
+
+        return $this->json($repository->find($id), JsonResponse::HTTP_OK);
+    }
 }

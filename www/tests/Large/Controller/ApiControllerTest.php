@@ -22,4 +22,12 @@ class ApiControllerTest extends WebTestCase
         $this->assertSame($this->client->getResponse()->getStatusCode(), Response::HTTP_OK);
         $this->assertJson($this->client->getResponse()->getContent());
     }
+
+    public function testGetOne()
+    {
+        $this->client->request('GET', '/api/category/1');
+
+        $this->assertSame($this->client->getResponse()->getStatusCode(), Response::HTTP_OK);
+        $this->assertJson($this->client->getResponse()->getContent());
+    }
 }
