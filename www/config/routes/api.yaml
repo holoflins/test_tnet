@@ -6,3 +6,13 @@ api_list:
     requirements:
        entityName: '[a-z_]+'
     methods: ['GET']
+
+api_get:
+    path: /{entityName}/{id}
+    defaults:
+        _controller: App\Controller\ApiController::getOne
+        _format: json
+    requirements:
+        entityName: '[a-z_]+'
+        id: '\d+'
+    methods:  ['GET']
