@@ -10,6 +10,9 @@ down:
 install-vendor:
 	docker exec -it test_tnet_php composer install
 
+update-vendor:
+	docker exec -it test_tnet_php composer install
+
 shell-php:
 	docker exec -it test_tnet_php ash
 
