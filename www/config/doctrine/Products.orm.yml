@@ -1,0 +1,36 @@
+App\Entity\Products:
+  type: entity
+  repositoryClass: App\Repository\ProductsRepository
+  id:
+    id:
+      type: integer
+      generator: {strategy: AUTO}
+  fields:
+    name:
+      type: string
+      length: 50
+    SKU:
+      type: string
+      length: 20
+    price:
+      type: float
+    quantity:
+      type: integer
+    deleted:
+      type: boolean
+    createdAt:
+      type: datetime
+      gedmo:
+        timestampable:
+          on: create
+    updatedAt:
+      type: datetime
+      gedmo:
+        timestampable:
+          on: update
+  manyToOne:
+    category:
+      targetEntity: Category
+      joinColumn:
+        name: category_id
+        referenceColumnName: id

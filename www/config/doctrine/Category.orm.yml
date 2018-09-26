@@ -1,0 +1,23 @@
+App\Entity\Category:
+  type: entity
+  repositoryClass: App\Repository\CategoryRepository
+  id:
+    id:
+      type: integer
+      generator: {strategy: AUTO}
+  fields:
+    name:
+      type: string
+      length: 50
+    deleted:
+      type: boolean
+    createdAt:
+      type: datetime
+      gedmo:
+        timestampable:
+          on: create
+    updatedAt:
+      type: datetime
+      gedmo:
+        timestampable:
+          on: update
