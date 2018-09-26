@@ -1,6 +1,9 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
 health:
     path: /health
     controller: App\Controller\HealthController::health
+
+api:
+    prefix: /api
+    resource: routes/api.yaml
+    defaults:
+        _format: json

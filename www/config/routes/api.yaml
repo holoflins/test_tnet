@@ -1,0 +1,8 @@
+api_list:
+    path: /{entityName}
+    defaults:
+        _controller: App\Controller\ApiController::list
+        _format: json
+    requirements:
+       entityName: '[a-z_]+'
+    methods: ['GET']
