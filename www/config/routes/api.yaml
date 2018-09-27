@@ -16,3 +16,32 @@ api_get:
         entityName: 'products'
         id: '\d+'
     methods:  ['GET']
+
+api_create:
+    path: /{entityName}
+    defaults:
+        _controller: App\Controller\ApiController::create
+        _format: json
+    requirements:
+       entityName: 'products'
+    methods: ['POST']
+
+api_update:
+    path: /{entityName}/{id}
+    defaults:
+        _controller: App\Controller\ApiController::update
+        _format: json
+    requirements:
+        entityName: 'products'
+        id: '\d+'
+    methods:  ['PUT']
+
+api_delete:
+    path: /{entityName}/{id}
+    defaults:
+        _controller: App\Controller\ApiController::delete
+        _format: json
+    requirements:
+        entityName: 'products'
+        id: '\d+'
+    methods: ['DELETE']

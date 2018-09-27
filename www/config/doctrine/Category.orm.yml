@@ -9,8 +9,7 @@ App\Entity\Category:
     name:
       type: string
       length: 50
-    deleted:
-      type: boolean
+      unique: true
     createdAt:
       type: datetime
       gedmo:

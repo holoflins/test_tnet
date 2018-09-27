@@ -8,6 +8,8 @@ use Doctrine\Common\Persistence\ManagerRegistry;
 
 class CategoryRepository extends ServiceEntityRepository implements RepositoryInterface
 {
+    use RepositoryTrait;
+
     /** {@inheritdoc} */
     public function __construct(ManagerRegistry $registry)
     {
