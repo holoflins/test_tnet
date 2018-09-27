@@ -10,9 +10,6 @@ trait EntityTrait
     /** @var int */
     private $id;
 
-    /** @var bool */
-    private $deleted = false;
-
     /** @var DateTime */
     private $createdAt;
 
@@ -25,25 +22,5 @@ trait EntityTrait
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    /**
-     * @return bool
-     */
-    public function isDeleted(): bool
-    {
-        return $this->deleted;
-    }
-
-    /**
-     * @param bool $deleted
-     *
-     * @return EntityInterface
-     */
-    public function setDeleted(bool $deleted): EntityInterface
-    {
-        $this->deleted = $deleted;
-
-        return $this;
     }
 }

@@ -6,6 +6,8 @@ use App\API\Exception\EntityNotFoundException;
 
 class EntityResolver
 {
+    use ResolverTrait;
+
     /** @var string */
     private $entityPath = 'App\\Entity\\';
 
@@ -24,25 +26,5 @@ class EntityResolver
         }
 
         return $entityNameSpace;
-    }
-
-    /**
-     * Change property to camel case for methods
-     *
-     * @param string $property
-     *
-     * @return string
-     */
-    private function toCamelCase(string $property): string
-    {
-        return ucfirst(
-            preg_replace_callback(
-                '/[_-](.)/',
-                function ($match) {
-                    return strtoupper($match[1]);
-                },
-                $property
-            )
-        );
     }
 }

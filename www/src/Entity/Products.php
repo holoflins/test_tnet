@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-class Products
+class Products implements EntityInterface
 {
     use EntityTrait;
 

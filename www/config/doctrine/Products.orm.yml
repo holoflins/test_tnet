@@ -16,8 +16,6 @@ App\Entity\Products:
       type: float
     quantity:
       type: integer
-    deleted:
-      type: boolean
     createdAt:
       type: datetime
       gedmo:

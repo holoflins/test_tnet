@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-class Category
+class Category implements EntityInterface
 {
     use EntityTrait;
 

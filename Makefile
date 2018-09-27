@@ -18,7 +18,11 @@ shell-php:
 
 shell-sql:
 	docker exec -it test_tnet_sql bash
+
 test:
+	docker exec -it test_tnet_php bin/console doctrine:schema:drop --force
+	docker exec -it test_tnet_php bin/console doctrine:schema:update --force
+	docker exec -it test_tnet_php bin/console doctrine:fixtures:load
 	docker exec -it test_tnet_php vendor/bin/phpunit
 
 test-small:
