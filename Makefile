@@ -4,6 +4,14 @@ start:
 stop:
 	docker-compose stop
 
+init:
+	docker-compose up -d
+	docker exec -it test_tnet_php composer install
+	docker exec -it test_tnet_php bin/console doctrine:schema:drop --force
+	docker exec -it test_tnet_php bin/console doctrine:schema:update --force
+	docker exec -it test_tnet_php bin/console doctrine:fixtures:load
+	docker exec -it test_tnet_php vendor/bin/phpunit
+
 down:
 	docker-compose down --rmi all -v --remove-orphans
 
