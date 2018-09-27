@@ -13,6 +13,6 @@ api_get:
         _controller: App\Controller\ApiController::getOne
         _format: json
     requirements:
-        entityName: '[a-z_]+'
+        entityName: 'products'
         id: '\d+'
     methods:  ['GET']
