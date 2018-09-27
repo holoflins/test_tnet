@@ -1,5 +1,5 @@
 ## How start project
-clone project on ###
+
 launch command 
 ```make init```
 
