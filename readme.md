@@ -4,7 +4,7 @@ launch command
 ```make init```
 
 add next line in /etc/hosts
-``` 127.0.0.1   nomDuProject.local ```
+``` 127.0.0.1   test_tnet.local ```
 
 copy .env.dist to .env
 
