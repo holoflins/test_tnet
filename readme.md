@@ -1,11 +1,11 @@
 # TalentNet Tech Challenge
 
-## How start Projects
+## Getting started
 
-launch command 
+Execute the following command 
 ```make init```
 
-add next line in /etc/hosts
+Add the following line to your /etc/hosts
 ``` 127.0.0.1   test_tnet.local ```
 
 copy .env.dist to .env
